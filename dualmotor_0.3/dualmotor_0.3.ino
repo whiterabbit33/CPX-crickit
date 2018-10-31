@@ -149,7 +149,21 @@ if (! CircuitPlayground.irReceiver.getResults()) {
     
     break;
     
- 
+  case 0x20f055AA: //180 left
+    Serial.println("180left");
+    motor_a.throttle(0.5);
+    motor_b.throttle(-0.5);
+    delay(600);
+    break;
+
+    case 0x2021DE: //180 right
+    Serial.println("180right");
+    motor_a.throttle(0.5);
+    motor_b.throttle(-0.5);
+    delay(600);
+    break;
+
+    
   }
   //Restart receiver
   CircuitPlayground.irReceiver.enableIRIn();      
