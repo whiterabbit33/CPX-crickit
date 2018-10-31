@@ -95,8 +95,8 @@ if (! CircuitPlayground.irReceiver.getResults()) {
   switch(CircuitPlayground.irDecoder.value) {
   case 0x20f002FD: //forward
       Serial.println("Forward");
-      motor_a.throttle(-0.5);
-      motor_b.throttle(-0.5);
+      motor_a.throttle(0.5);
+      motor_b.throttle(0.5);
       delay(2000);
       motor_a.throttle(0);
       motor_b.throttle(0);
@@ -113,8 +113,8 @@ if (! CircuitPlayground.irReceiver.getResults()) {
     
   case 0x20f0827D: //back
     Serial.println("stop");
-    motor_a.throttle(0.5);
-    motor_b.throttle(0.5);
+    motor_a.throttle(-0.5);
+    motor_b.throttle(-0.5);
     delay(2000);
     motor_a.throttle(0);
     motor_b.throttle(0);
@@ -153,14 +153,21 @@ if (! CircuitPlayground.irReceiver.getResults()) {
     Serial.println("180left");
     motor_a.throttle(0.5);
     motor_b.throttle(-0.5);
-    delay(600);
+    delay(945);
+    motor_a.throttle(0);
+    motor_b.throttle(0);
+    delay(10);
     break;
 
-    case 0x2021DE: //180 right
+    case 0x20F021DE: //180 right
     Serial.println("180right");
-    motor_a.throttle(0.5);
-    motor_b.throttle(-0.5);
-    delay(600);
+    motor_a.throttle(-0.5);
+    motor_b.throttle(0.5);
+    delay(945);
+     motor_a.throttle(0);
+    motor_b.throttle(0);
+    delay(10);
+    
     break;
 
     
